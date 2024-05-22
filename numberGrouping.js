@@ -6,7 +6,23 @@ Kelompokkan angka dalam 3 nested array.
 */
 
 function numberGrouping(numbers) {
-  // Code here
+  const odd = [];
+  const even = [];
+  const dividedByThree = [];
+  
+  numbers.forEach(number => {
+    if (number % 3 === 0) {
+      dividedByThree.push(number);
+    }
+    else if (number % 2 ===0) {
+      even.push(number);
+    }
+    else {
+      odd.push(number);
+    }
+  });
+
+  return console.log([even, odd, dividedByThree]);
 }
 
 numberGrouping([1, 2, 4, 6, 8]) // Output: [[2, 4, 8], [1], [6]]
